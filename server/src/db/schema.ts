@@ -1,0 +1,1 @@
+// Defino aqui quais tabelas e colunas terei no meu DB
