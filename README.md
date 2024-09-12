@@ -13,3 +13,12 @@
 - [ESLint](https://eslint.org/): Ferramenta para análise de código, responsável por identificar erros e inconsistências, como variáveis não utilizadas ou não declaradas.
 
 - [Prettier](https://prettier.io/): Ferramenta de formatação de código que cuida de detalhes como indentação, espaçamento, uso de aspas simples ou duplas, entre outros, garantindo consistência no estilo do código
+
+- [DayJS](https://day.js.org/en/): Analisa, valida, manipula e mostra datas e horários. Possui uma API fácil de usar e próxima da API Date nativa do JS, mas mais intuitiva. Ideal para realizar operações com datas, como formatação, comparação ou adição de dias/semanas/meses, etc.
+
+### Rotas
+
+- Cadastras metas
+- Marcar metas como concluidas
+- Retorna os dados da minha semana (resumo semanal) 
+- Metas que foram e ainda não foram completadas 
