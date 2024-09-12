@@ -6,7 +6,7 @@ interface ICreateGoalRequest {
   desiredWeeklyFrequency: number;
 }
 
-const createGoal = async ({
+export const createGoal = async ({
   title,
   desiredWeeklyFrequency,
 }: ICreateGoalRequest) => {
