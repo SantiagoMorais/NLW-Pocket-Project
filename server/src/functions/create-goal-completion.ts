@@ -15,6 +15,7 @@ export const createGoalCompletion = async ({ goalId }: ICreateGoalRequest) => {
     db
       .select({
         goalId: goalCompletions.goalId,
+        // Sempre que eu faço alguma agregação, uso sql, crio um campo inexistente ou uso, por exemplo, o count abaixo, preciso usar o ".as"
         completionCount: count(goalCompletions.id).as("completionCount"),
       })
       .from(goalCompletions)
@@ -23,7 +24,7 @@ export const createGoalCompletion = async ({ goalId }: ICreateGoalRequest) => {
           between(
             goalCompletions.createdAt,
             firstDayOfTheWeek,
-            lastDayOfTheWeek
+            lastDayOfTheWeek,
           ),
           eq(goalCompletions.goalId, goalId)
         )

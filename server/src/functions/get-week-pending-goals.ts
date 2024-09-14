@@ -2,7 +2,7 @@ import { db } from "@db/index";
 import { goalCompletions, goals } from "@db/schema";
 import dayjs from "dayjs";
 import weekOfYear from "dayjs/plugin/weekOfYear";
-import { and, between, count, eq, lte, sql } from "drizzle-orm";
+import { between, count, eq, lte, sql } from "drizzle-orm";
 
 dayjs.extend(weekOfYear);
 
