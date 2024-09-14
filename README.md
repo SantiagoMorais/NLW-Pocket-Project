@@ -20,9 +20,11 @@
 
 - [Fastify-type-provider-zod](https://github.com/turkerdev/fastify-type-provider-zod): Integra o **Zod** com o **Fastify**, permitindo validar e tipar dados das requisições HTTP para evitar erros. O plugin usa esquemas de validação do Zod para definir e validar automaticamente o `body`, `params`, `query` e `headers` das requisições. Isso garante dados consistentes e permite que o TypeScript reconheça a tipagem corretamente. Já que toda rota precisa de validação, ele automatiza e facilita este serviço.
 
+- [@fastify/cors](https://github.com/fastify/fastify-cors): Plugin do Fastify que configura o CORS (Cross-Origin Resource Sharing), uma medida de segurança que limita o acesso ao backend, permitindo apenas frontends específicos. O CORS protege contra ataques como CSRF (Cross-Site Request Forgery), exigindo que o servidor permita explicitamente solicitações de outras origens.
+
 ### Rotas
 
-- Cadastras metas
+- Cadastrar metas
 - Marcar metas como concluidas
 - Retorna os dados da minha semana (resumo semanal) 
 - Metas que foram e ainda não foram completadas 
