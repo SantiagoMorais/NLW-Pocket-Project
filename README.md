@@ -26,6 +26,10 @@
 
 - [TailwindCSS](https://tailwindcss.com): Framework CSS com classes utilitárias que facilita e acelera o processo de estilização de elementos HTML/JSX, permitindo personalizações rápidas sem sair do código.
 
+- [vite-tsconfig-paths](https://www.npmjs.com/package/vite-tsconfig-paths): Permite que o Vite reconheça e use os aliases de importação definidos no `tsconfig.json`, simplificando a importação de arquivos com aliases como `@components` em vez de caminhos longos como `../../components`.
+
+- [Lucide-React](https://lucide.dev): Biblioteca  que fornece ícones e símbolos para React. Facilita para designers e programadores incorporar ícones aos projetos.
+
 ### Rotas
 
 - Cadastrar metas
