@@ -30,6 +30,18 @@
 
 - [Lucide-React](https://lucide.dev): Biblioteca  que fornece ícones e símbolos para React. Facilita para designers e programadores incorporar ícones aos projetos.
 
+- [Tailwind-Merge](https://www.npmjs.com/package/tailwind-merge): Facilita a combinação de classes do Tailwind CSS, especialmente quando há conflitos de estilos. Ela mescla as classes de forma inteligente, garantindo que as mais específicas prevaleçam, evitando a sobreposição incorreta de estilos. Ideal para gerenciar estilos dinâmicos e condicionalmente aplicar classes sem duplicação ou conflito de prioridades no CSS.
+
+- [Tailwind Variants](https://www.tailwind-variants.org): Biblioteca que ajuda a gerenciar e aplicar variantes de estilos no Tailwind CSS, permitindo criar estilos condicionais e dinâmicos de forma simples e organizada.
+
+- [Radix UI](https://www.radix-ui.com):
+
+    - [React Radio Group](https://www.radix-ui.com/docs/primitives/components/radio-group): Componente acessível de botões de opção (radio buttons) para React, focado em boas práticas de acessibilidade. Suporta navegação por teclado, leitores de tela e é altamente personalizável, facilitando a integração com bibliotecas como Tailwind CSS.
+
+    - [React Progress](https://www.radix-ui.com/primitives/docs/components/progress):  Componente de barra de progresso acessível para React, ideal para mostrar o andamento de tarefas. Suporta boas práticas de acessibilidade e é fácil de personalizar com bibliotecas de estilo como Tailwind CSS.
+
+    - [React Dialog](https://www.radix-ui.com/primitives/docs/components/dialog): Componente de diálogo acessível para React, ideal para criar modais e janelas de diálogo. Oferece suporte a navegação por teclado e leitores de tela, com fácil personalização para se adaptar ao estilo do projeto.
+
 ### Rotas
 
 - Cadastrar metas
