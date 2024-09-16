@@ -42,6 +42,8 @@
 
     - [React Dialog](https://www.radix-ui.com/primitives/docs/components/dialog): Componente de diálogo acessível para React, ideal para criar modais e janelas de diálogo. Oferece suporte a navegação por teclado e leitores de tela, com fácil personalização para se adaptar ao estilo do projeto.
 
+- [TanStack Query](https://tanstack.com/query/latest): Biblioteca para gerenciar e sincronizar dados remotos em aplicações React. Facilita a busca, cache e atualização de dados com uma API simples e eficiente. Ideal para otimizar requisições assíncronas e melhorar o desempenho.
+
 ### Rotas
 
 - Cadastrar metas
