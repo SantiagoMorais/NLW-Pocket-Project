@@ -1,3 +1,5 @@
+
+
 ### Bibliotecas Backend
 
 - [Fastify](https://fastify.dev): Framework web para Node.js usado para criar APIs e servidores HTTP (similar ao Express.js), otimizado para alto desempenho e com suporte nativo a tipagem em TypeScript.
