@@ -1,4 +1,4 @@
-import { ISummary, ISummaryData } from "@utils/types";
+import { ISummary, ISummaryData } from "@interfaces/summaryTypes";
 
 export const getSummary = async (): Promise<ISummaryData> => {
   const response = await fetch("http://localhost:3333/summary");

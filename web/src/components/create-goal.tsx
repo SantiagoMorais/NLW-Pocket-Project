@@ -63,7 +63,7 @@ export const CreateGoal = () => {
               <Label>Quantas vezes na semana?</Label>
               <RadioGroup>
                 {formOptions.map((item) => (
-                  <RadioGroupItem value={item.value} id={item.value}>
+                  <RadioGroupItem key={item.value} value={item.value} id={item.value}>
                     <RadioGroupIndicator />
                     <span className="text-zinc-300 text-sm font-medium leading-none">
                       {item.desiredWeeklyFrequency}

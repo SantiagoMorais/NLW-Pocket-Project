@@ -1,7 +1,7 @@
 import { db } from "@db/index";
 import { goalCompletions, goals } from "@db/schema";
 import dayjs from "dayjs";
-import { between, count, eq, sql } from "drizzle-orm";
+import { between, count, desc, eq, sql } from "drizzle-orm";
 
 export const getWeekSummary = async () => {
   const firstDayOfTheWeek = dayjs().startOf("week").toDate();
@@ -52,6 +52,7 @@ export const getWeekSummary = async () => {
       })
       .from(goalsCompletedInWeek)
       .groupBy(goalsCompletedInWeek.completedAtDate)
+      .orderBy(desc(goalsCompletedInWeek.completedAtDate))
   );
   // o JSON_AGG pega um retorno do postgres e converte em um array
   // o JSON_BUILD_OBJET vai criar os objetos que ficarão dentro do array
