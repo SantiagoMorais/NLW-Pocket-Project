@@ -44,6 +44,10 @@
 
 - [TanStack Query](https://tanstack.com/query/latest): Biblioteca para gerenciar e sincronizar dados remotos em aplicações React. Facilita a busca, cache e atualização de dados com uma API simples. Ideal para otimizar requisições assíncronas e o desempenho.
 
+- [React Hook Form](https://react-hook-form.com): Biblioteca para gerenciamento de formulários em React, focada em validação e envio de dados.
+
+- [@hookform/resolvers](): Pacote de resolvers para integrar bibliotecas de validação, como Zod, com o React Hook Form. Um resolver é uma função que traduz as regras de validação da biblioteca para o formato usado pelo React Hook Form, simplificando a validação de formulários e o gerenciamento de erros.
+
 ### Rotas
 
 - Cadastrar metas
