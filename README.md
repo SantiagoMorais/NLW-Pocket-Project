@@ -8,6 +8,29 @@ Projeto desenvolvido com Node | Fastify | Docker | PostgreSQL - React | TypeScri
 
 ## Funcionalidade
 
+<img src="./src/assets/gifs/funcionality.gif">
+
+# Sumário
+
+- [Bibliotecas Utilizadas](#bibliotecas-utilizadas);
+  - [Bibliotecas Backend](#bibliotecas-backend);
+  - [Bibliotecas Frontend](#bibliotecas-frontend);
+- [Objetivos do Projeto](#objetivos-do-projeto);
+- [Desenvolvimento do Projeto](#desenvolvimento-do-projeto);
+  - [Server](#server);
+    1. [Criar nova meta](#1-criar-uma-nova-meta---método-post);
+    2. [Visualizar metas pendentes](#2-visualizar-as-metas-pendentes---método-get);
+    3. [Criar conclusão da meta](#3-criar-a-conclusão-da-meta---método-post);
+    2. [Visualizar resumo da semana](#4-visualizar-o-resumo-da-semana);
+  - [Web](#web);
+    - [Criar meta](#creategoal);
+    - [Metas pendentes](#pending-goals);
+    - [Resumo semanal](#summary);
+- [Como executar o projeto](#como-executar-o-projeto);
+- [Contatos do autor](#contatos-do-autor)
+
+
+
 ## Bibliotecas Utilizadas
 
 ### Bibliotecas Backend
@@ -62,12 +85,25 @@ Projeto desenvolvido com Node | Fastify | Docker | PostgreSQL - React | TypeScri
 
 - [@hookform/resolvers](): Pacote de resolvers para integrar bibliotecas de validação, como Zod, com o React Hook Form. Um resolver é uma função que traduz regras de validação para o formato usado pelo React Hook Form, simplificando a validação de formulários e o gerenciamento de erros.
 
-### Rotas
+## Objetivos do projeto
 
-- Cadastrar metas
-- Marcar metas como concluidas
-- Retorna os dados da minha semana (resumo semanal) 
-- Metas que foram e ainda não foram completadas 
+- Criar o servidor com Fastify e Node.js para criação de Rotas
+  - Cadastrar metas
+  - Marcar metas como concluidas
+  - Retorna os dados da minha semana (resumo semanal) 
+  - Metas que foram e ainda não foram completadas 
+- Criar o banco de dados utilizando Docker e PostgreSQL
+- Criar funções que utilizem das rotas para atualizar o banco de dados
+- Utilizar a lib ZOD para verificação dos dados nas variáveis de ambiente e dados nas requisições HTTP
+
+- Interface do usuário
+  - Apresentar uma tela de início quando não houver dados cadastrados
+  - Criar uma caixa de diálogo para preenchimento amigável do formulário para adicionar novas metas
+  - Apresentar as metas pendentes
+  - Apresentar metas concluidas organizadas por data e hora
+  - Apresentar uma barra de progresso a medida que os dados são concluídos
+  - Desabilitar os dados de serem adicionados como concluídos quando alcançarem a frequência semanal desejada.
+
 
 ## Desenvolvimento do Projeto
 
@@ -707,16 +743,17 @@ No final, dados como nome da meta, data de conclusão, número de metas concluid
 
 ## Como executar o projeto
 
-1. Requisitos:
+**1. Requisitos:**
 
     - Ter [Node.JS](https://nodejs.org/pt) instalado em sua máquina 
     - Ter [Docker](https://www.docker.com/products/docker-desktop/) instalado em sua máquina.
 
-2. Baixar as dependências:
+**2. Instalar as dependências:**
 
     - Instalar as dependências executar o comando "npm install" dentro da pasta "./server" e dentro da pasta "./web", uma vez em cada um.
 
-3. Criar um arquivo .env e adicionar a url do banco de dados. Ela segue este padrão:
+**3. Variáveis de ambiente** 
+  - Criar um arquivo .env na raiz da pasta "./server" e adicionar a url do banco de dados. Ela segue este padrão:
 
 ```md
 DATABASE_URL=<DATABASE>://<USER>:<PASSWORD>@<HOST>:<PORT>/<DATABASE>
@@ -750,15 +787,32 @@ DATABASE_URL=postgresql://docker:docker@localhost:5432/inorbit
 
   - No nosso caso, o banco de dados será criado dentro da nossa máquina, somente para estudos e aprendizado, mas este tipo de informação não deve ser compartilhada.
 
-4. Dentro da pasta "./server" criar uma nova migração do banco de dados utilizando o comando `npx drizzle-kit migrate`.
+**4. Inicializar o banco de dados**
 
-5. Dentro da pasta "./server" executar o comando `docker compose up -d` para rodar o bando de dados no Docker
+  - Dentro da pasta "./server" executar o comando `docker compose up -d` para rodar o bando de dados no Docker
 
-6. Dentro da pasta "./server" executar o comando `npm run dev` para iniciar o servidor. Se o servidor não estiver rodando, as requisições de dados não serão feitas.
+  - A partir daqui, como informado anteriormente, caso você tenha por exemplo o PostgreSQL instalado globalmente na sua máquina, pode haver conflito de dados, como senha e nome de usuário, sendo um impediditivo para a migração e criação do esquema do banco. Caso enfrente algum problema de "senha incorreta" ou algum erro similar ao tentar realizar os próximos dados abaixo, acesse o seu **Gerenciador de tarefas** e vá em serviços e procure pelo seu banco de dados instalado e pare o serviço do banco:
 
-7. Retornar para a pasta web e executar o comando `npm run dev` para executar o projeto e visualizar em seu navegador. Provavelmente abrirá na porta http://localhost:5173.
+    <img src="./src//assets//imgs/tasksManager.png" alt="Serviços do Gerenciador de Tarefas">
+
+**5. Migração do esquema para o banco de dados**
+
+  - Dentro da pasta "./server" criar uma nova migração do banco de dados utilizando o comando `npx drizzle-kit migrate`. A migração só ocorrerá com sucesso se o banco de dados já estiver em andamento.
+
+**6. Inicializar o servidor**
+
+  - Dentro da pasta "./server" executar o comando `npm run dev` para iniciar o servidor. Se o servidor não estiver rodando, as requisições de dados não serão feitas.
+
+**7. Inicializar o projeto web**
+
+  - Retornar para a pasta web e executar o comando `npm run dev` para executar o projeto e visualizar em seu navegador. Provavelmente abrirá na porta http://localhost:5173.
 
 
+## Contatos do Autor
 
+-  GitHub - [Felipe Santiago Morais](https://github.com/SantiagoMorais)
+-  Linkedin - [Felipe Santiago](https://www.linkedin.com/in/felipe-santiago-873025288/)
+-  Instagram - [@felipe.santiago.morais](https://www.instagram.com/felipe.santiago.morais)
+-  Email - <a href="mailto:contatofelipesantiago@gmail.com" target="blank">contatofelipesantiago@gmail.com</a>
 
 
