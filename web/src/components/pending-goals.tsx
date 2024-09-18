@@ -1,11 +1,13 @@
 import { Plus } from "lucide-react";
 import { OutlineButton } from "./ui/outline-button";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { PendingGoalsData } from "@interfaces/pendingGoalsTypes";
 import { getPendingGoals } from "http/get-pending-goals";
 import { createGoalCompletion } from "http/create-goal-completion";
 
 export const PendingGoals = () => {
+  const queryClient = useQueryClient();
+
   const { data } = useQuery<PendingGoalsData>({
     queryKey: ["pendingGoal"],
     queryFn: getPendingGoals,
@@ -16,6 +18,10 @@ export const PendingGoals = () => {
 
   const handleCompleteGoal = async (goalId: string) => {
     await createGoalCompletion(goalId);
+
+    // quando passamos para o queryClient o id de uma query, ele faz essa query novamente. Funciona como um useEffect para atualizar a UI com os novos dados atualizados.
+    queryClient.invalidateQueries({ queryKey: ["summary"] });
+    queryClient.invalidateQueries({ queryKey: ["pendingGoal"] });
   };
 
   return (
