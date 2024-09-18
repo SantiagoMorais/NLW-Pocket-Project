@@ -9,6 +9,7 @@ import { getSummary } from "http/get-summary";
 import { SummaryData } from "@interfaces/summaryTypes";
 import dayjs from "dayjs";
 import ptBR from "dayjs/locale/pt-BR";
+import { PendingGoals } from "./pending-goals";
 
 dayjs.locale(ptBR);
 
@@ -59,8 +60,7 @@ export const Summary = () => {
         </div>
 
         <Separator />
-
-
+        <PendingGoals />
       </div>
       <div className="flex flex-col gap-6">
         <h2 className="text-xl font-medium">Sua semana</h2>
@@ -79,17 +79,17 @@ export const Summary = () => {
               </h3>
 
               <ul className="flex flex-col gap-3">
-                {goals.map(goal => {
-                  const formattedHour = dayjs(goal.completedAt).format("HH:mm[h]");
+                {goals.map((goal) => {
+                  const formattedHour = dayjs(goal.completedAt).format(
+                    "HH:mm[h]"
+                  );
                   return (
                     <li key={goal.id} className="flex items-center gap-2">
                       <CheckCircle2 className="size-4 text-pink-500" />
                       <p className="text-sm text-zinc-400">
                         Você completou "
                         <span className="text-zinc-100">{goal.title}</span>" às{" "}
-                        <span className="text-zinc-100">
-                          {formattedHour}
-                        </span>
+                        <span className="text-zinc-100">{formattedHour}</span>
                       </p>
                     </li>
                   );
