@@ -1,4 +1,4 @@
-export type ISummaryData = {
+export type SummaryData = {
     completed: number;
     total: number;
     goalsPerDay: Record<
@@ -11,7 +11,7 @@ export type ISummaryData = {
     >;
   };
   
-  export type ISummary = {
-    summary: ISummaryData;
+  export type Summary = {
+    summary: SummaryData;
   };
   

@@ -1,7 +1,7 @@
-import { ISummary, ISummaryData } from "@interfaces/summaryTypes";
+import { Summary, SummaryData } from "@interfaces/summaryTypes";
 
-export const getSummary = async (): Promise<ISummaryData> => {
+export const getSummary = async (): Promise<SummaryData> => {
   const response = await fetch("http://localhost:3333/summary");
-  const data: ISummary = await response.json();
+  const data: Summary = await response.json();
   return data.summary;
 };

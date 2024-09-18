@@ -4,17 +4,16 @@ import { DialogTrigger } from "./ui/dialog";
 import { InOrbitIcon } from "./in-orbit-icon";
 import { Progress, ProgressIndicator } from "./ui/progress-bar";
 import { Separator } from "./ui/separator";
-import { OutlineButton } from "./ui/outline-button";
 import { useQuery } from "@tanstack/react-query";
 import { getSummary } from "http/get-summary";
-import { ISummaryData } from "@interfaces/summaryTypes";
+import { SummaryData } from "@interfaces/summaryTypes";
 import dayjs from "dayjs";
 import ptBR from "dayjs/locale/pt-BR";
 
 dayjs.locale(ptBR);
 
 export const Summary = () => {
-  const { data } = useQuery<ISummaryData>({
+  const { data } = useQuery<SummaryData>({
     queryKey: ["summary"],
     queryFn: getSummary,
     staleTime: 1000 * 60, // 60 seconds
@@ -61,27 +60,7 @@ export const Summary = () => {
 
         <Separator />
 
-        <div className="flex flex-wrap gap-3">
-          <OutlineButton>
-            <Plus className="size-4 text-zinc-600" />
-            Meditar
-          </OutlineButton>
 
-          <OutlineButton>
-            <Plus className="size-4 text-zinc-600" />
-            Nadar
-          </OutlineButton>
-
-          <OutlineButton>
-            <Plus className="size-4 text-zinc-600" />
-            Rezar
-          </OutlineButton>
-
-          <OutlineButton>
-            <Plus className="size-4 text-zinc-600" />
-            Comer verduras e legumes
-          </OutlineButton>
-        </div>
       </div>
       <div className="flex flex-col gap-6">
         <h2 className="text-xl font-medium">Sua semana</h2>
