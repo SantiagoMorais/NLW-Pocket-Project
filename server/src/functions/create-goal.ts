@@ -1,4 +1,4 @@
-import { eq } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 import { db } from "../db";
 import { goals } from "../db/schema";
 
@@ -14,7 +14,7 @@ export const createGoal = async ({
   const goalAlreadyExist = await db
     .select()
     .from(goals)
-    .where(eq(goals.title, title))
+    .where(eq(sql/* sql */ `LOWER(${goals.title})`, title.toLowerCase()))
     .limit(1);
 
   if (goalAlreadyExist[0]) {
