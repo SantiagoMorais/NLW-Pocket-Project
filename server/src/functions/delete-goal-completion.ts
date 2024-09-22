@@ -1,5 +1,5 @@
 import { db } from "@db/index";
-import { goalCompletions, goals } from "@db/schema";
+import { goalCompletions } from "@db/schema";
 import { eq } from "drizzle-orm";
 
 interface IDeleteGoalRequest {
@@ -10,7 +10,7 @@ export const deleteGoalCompletion = async ({ id }: IDeleteGoalRequest) => {
   const goalExists = await db
     .select()
     .from(goalCompletions)
-    .where(eq(goalCompletions.goalId, id))
+    .where(eq(goalCompletions.id, id))
     .limit(1);
 
   if (!goalExists[0]) {
@@ -21,6 +21,6 @@ export const deleteGoalCompletion = async ({ id }: IDeleteGoalRequest) => {
 
   await db
     .delete(goalCompletions)
-    .where(eq(goalCompletions.goalId, id))
+    .where(eq(goalCompletions.id, id))
     .returning();
 };
