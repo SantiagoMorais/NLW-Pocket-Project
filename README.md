@@ -83,7 +83,7 @@ Projeto desenvolvido com Node | Fastify | Docker | PostgreSQL - React | TypeScri
 
 - [React Hook Form](https://react-hook-form.com): Biblioteca para gerenciamento de formulários em React, focada em validação e envio de dados.
 
-- [@hookform/resolvers](): Pacote de resolvers para integrar bibliotecas de validação, como Zod, com o React Hook Form. Um resolver é uma função que traduz regras de validação para o formato usado pelo React Hook Form, simplificando a validação de formulários e o gerenciamento de erros.
+- [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers): Pacote de resolvers para integrar bibliotecas de validação, como Zod, com o React Hook Form. Um resolver é uma função que traduz regras de validação para o formato usado pelo React Hook Form, simplificando a validação de formulários e o gerenciamento de erros.
 
 ## Objetivos do projeto
 
