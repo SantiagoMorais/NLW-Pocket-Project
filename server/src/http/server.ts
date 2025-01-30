@@ -1,5 +1,6 @@
 import fastify from "fastify";
 import {
+  jsonSchemaTransform,
   serializerCompiler,
   validatorCompiler,
   ZodTypeProvider,
@@ -12,6 +13,8 @@ import fastifyCors from "@fastify/cors";
 import { deleteGoalRoute } from "./routes/delete-goal";
 import { deleteGoalCompletionRoute } from "./routes/delete-goal-completion";
 import { editGoalRoute } from "./routes/edit-goal";
+import { fastifySwagger } from "@fastify/swagger";
+import { fastifySwaggerUi } from "@fastify/swagger-ui";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 const port: number = 3333;
@@ -23,6 +26,21 @@ app.register(fastifyCors, {
   origin: "*",
 });
 
+app.register(fastifySwagger, {
+  openapi: {
+    info: {
+      title: "in.orbit",
+      version: "1.0.0",
+    },
+  },
+  transform: jsonSchemaTransform, // Como estou usando o fastify type provider zod nas rotas, posso usá-las para gerar a documentação de forma automática.
+});
+
+app.register(fastifySwaggerUi, {
+  routePrefix: "/docs",
+});
+
+// routes
 app.register(createGoalRoute);
 app.register(getPedingGoalsRoute);
 app.register(createCompletionRoute);
